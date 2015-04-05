@@ -575,7 +575,7 @@ key_downloadmanager(GtkWidget *widget, GdkEvent *event, gpointer data)
 {
 	if (event->type == GDK_KEY_PRESS)
 	{
-		if (((GdkEventKey *)event)->state & GDK_MOD1_MASK)
+		if (((GdkEventKey *)event)->state & GDK_CONTROL_MASK)
 		{
 			switch (((GdkEventKey *)event)->keyval)
 			{
@@ -599,7 +599,7 @@ key_location(GtkWidget *widget, GdkEvent *event, gpointer data)
 
 	if (event->type == GDK_KEY_PRESS)
 	{
-		if (((GdkEventKey *)event)->state & GDK_MOD1_MASK)
+		if (((GdkEventKey *)event)->state & GDK_CONTROL_MASK)
 		{
 			switch (((GdkEventKey *)event)->keyval)
 			{
@@ -666,7 +666,7 @@ key_web_view(GtkWidget *widget, GdkEvent *event, gpointer data)
 
 	if (event->type == GDK_KEY_PRESS)
 	{
-		if (((GdkEventKey *)event)->state & GDK_MOD1_MASK)
+		if (((GdkEventKey *)event)->state & GDK_CONTROL_MASK)
 		{
 			switch (((GdkEventKey *)event)->keyval)
 			{
@@ -737,8 +737,7 @@ key_web_view(GtkWidget *widget, GdkEvent *event, gpointer data)
 	}
 	else if (event->type == GDK_SCROLL)
 	{
-		if (((GdkEventScroll *)event)->state & GDK_MOD1_MASK ||
-		    ((GdkEventScroll *)event)->state & GDK_CONTROL_MASK)
+		if (((GdkEventScroll *)event)->state & GDK_CONTROL_MASK)
 		{
 			gdk_event_get_scroll_deltas(event, &dx, &dy);
 			z = webkit_web_view_get_zoom_level(WEBKIT_WEB_VIEW(c->web_view));
